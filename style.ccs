@@ -1,6 +1,8 @@
 
 .header {
     background-color: #8B008B;
+    width: 1846px;
+    height: 81px;
     z-index: 3;
     display: flex;
     justify-content: center;
@@ -9,6 +11,11 @@
     padding: auto;
 }
 
+.card:hover{
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
 .pagename {
     font-family: "Jaro", sans-serif;
     z-index: 3;
@@ -16,6 +23,7 @@
     font-style: italic;
     font-size: 30px;
     padding-right: 30px;
+    position: static;
     color: white;
 }
 
@@ -25,7 +33,7 @@
     display: inline-block;
     flex-direction: flex;
     padding-top: 425px;
-    padding-left: 50px;
+    padding-left: 40px;
     justify-content: left;
     border: 5px solid black;
 }
@@ -101,6 +109,7 @@
 
 .recomendation {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: grid;
     font-size: 30px;
     font-weight: 600;
     background-color: #DA8585;
@@ -115,58 +124,78 @@
     position: absolute;
     left: 110px;
     top: 150px;
+    max-width: 100%;
+    height: auto;
 }
 
 .norte {
     position: absolute;
     left: 375px;
     top: 150px;
+    max-width: 100%;
+    height: auto;
 }
 
 .verano {
     position: absolute;
     left: 645px;
     top: 150px;
+    max-width: 100%;
+    height: auto;
 }
 
 .jackson {
     position: absolute;
     left: 900px;
     top: 150px;
+    max-width: 100%;
+    height: auto;
 }
 
-.assasing {
+.assassins {
     position: absolute;
     left: 1135px;
     top: 150px;
+    max-width: 100%;
+    height: auto;
 }
 
 .dc {
     position: absolute;
     left: 110px;;
     top: 500px;
+    max-width: 100%;
+    height: auto;
 }
 
 .batman {
     position: absolute;
     left: 375px;
     top: 500px;
+    max-width: 100%;
+    height: auto;
 }
 
 .avatar {
     position: absolute;
     left: 645px;
     top: 500px;
+    max-width: 100%;
+    height: auto;
 }
 
 .hellboy {
     position: absolute;
     left: 900px;
     top: 500px;
+    max-width: 100%;
+    height: auto;
 }
 
 .godzilla {
     position: absolute;
+    max-width: 100%;
+    height: auto;
     left: 1135px;
     top: 500px;
 }
