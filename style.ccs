@@ -1,3 +1,26 @@
+:root {
+    --bg-main: #720041;
+    --bg-aside: #f0f0f0;
+    --text-color: #000;
+}
+
+body.dark-mode {
+    --bg-main: #1a1a1a;
+    --bg-aside: #2d2d2d;
+    --text-color: #fff;
+    background-color: #121212;
+}
+
+.dark-mode-btn {
+    position: absolute;
+    right: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    font-weight: bold;
+}
 
 * {
     margin: 0;
@@ -36,6 +59,8 @@ body {
 .starlight {
     background-image: url("Textures/background.png");
     background-size: cover;
+    background-color: var(--bg-aside);
+    color: var(--text-color);
     width: 350px;
     padding: 20px;
     border-right: 5px solid black;
@@ -69,8 +94,9 @@ body {
 
 .side-menu {
     flex: 1;
-    background-color: #720041;
+    background-color: var(--bg-main);
     padding: 40px;
+    transition: background-color 0.4s ease;
 }
 
 .recomendation {
@@ -85,10 +111,12 @@ body {
 }
 
 .gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    padding: 20px;
+
 }
 
 .book-item {
@@ -96,8 +124,12 @@ body {
 }
 
 .book-item img {
+    width: 100%;
+    height: auto;
     border-radius: 5px;
     display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .book-item:hover {
