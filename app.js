@@ -1,51 +1,42 @@
-// Esperar a que el HTML cargue completamente
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Efecto de "Zoom" y Sombra en las Portadas
-    const libros = document.querySelectorAll('.book-item');
+    const portadas = document.querySelectorAll('section img');
     
-    libros.forEach(libro => {
-        libro.addEventListener('mouseenter', () => {
-            libro.style.transform = 'scale(1.05)';
-            libro.style.transition = 'all 0.3s ease';
-            libro.style.cursor = 'pointer';
+    portadas.forEach(portada => {
+        portada.addEventListener('mouseenter', () => {
+            portada.style.transform = 'scale(1.1)';
+            portada.style.transition = 'transform 0.3s ease';
+            portada.style.cursor = 'pointer';
+            portada.style.border = '2px solid #FF00FF';
         });
         
-        libro.addEventListener('mouseleave', () => {
-            libro.style.transform = 'scale(1)';
+        portada.addEventListener('mouseleave', () => {
+            portada.style.transform = 'scale(1)';
+            portada.style.border = 'none';
         });
 
-        // 2. Simular apertura de libro al hacer clic
-        libro.addEventListener('click', () => {
-            const titulo = libro.querySelector('img').alt;
-            alert(`¡Abriendo: ${titulo}! Prepárate para leer.`);
+        portada.addEventListener('click', () => {
+            const nombreLibro = portada.alt || "este libro";
+            alert("Has seleccionado: " + nombreLibro);
         });
     });
 
-    // 3. Botón de Cambio de Tema (Modo Espacial)
-    // Asegúrate de tener un botón con la clase .switch-theme-button en tu HTML
-    const themeBtn = document.querySelector('.switch-theme-button');
-    const header = document.querySelector('.header');
-
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            header.style.backgroundImage = "url('Textures/background.png')";
-            header.style.backgroundSize = 'cover';
-            document.body.style.backgroundColor = '#1a1a1a';
-            alert('Modo Nocturno activado en Fandom-Squad');
+    const btnOscuro = document.getElementById('boton-oscuro');
+    
+    if (btnOscuro) {
+        btnOscuro.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            const header = document.querySelector('.header');
+            if (document.body.classList.contains('dark-mode')) {
+                header.style.backgroundColor = '#1a1a1a';
+                btnOscuro.textContent = '☀️ Modo Claro';
+            } else {
+                header.style.backgroundColor = '#800080';
+                btnOscuro.textContent = '🌙 Modo Oscuro';
+            }
         });
     }
 
-    // 4. Función para la flecha de scroll (Si tienes el botón .arrow-next)
-    const arrow = document.querySelector('.arrow-next');
-    if (arrow) {
-        arrow.addEventListener('click', () => {
-            window.scrollTo({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        });
-    }
-
-    console.log("JavaScript de Fandom-Squad cargado correctamente.");
 });
