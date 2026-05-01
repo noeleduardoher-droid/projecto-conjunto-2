@@ -1,14 +1,15 @@
 :root {
+    --bg-header: #8B008B;
     --bg-main: #720041;
     --bg-aside: #f0f0f0;
     --text-color: #000;
 }
 
 body.dark-mode {
-    --bg-main: #1a1a1a;
-    --bg-aside: #2d2d2d;
-    --text-color: #fff;
-    background-color: #121212;
+    --bg-header: #1a1a1a;
+    --bg-main: #2b2b2b;
+    --bg-aside: #333333;
+    --text-color: #ffffff;
 }
 
 .dark-mode-btn {
