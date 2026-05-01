@@ -1,9 +1,45 @@
-
+// Esperar a que el HTML cargue completamente
 document.addEventListener('DOMContentLoaded', () => {
 
-    const scrollBtn = document.querySelector('.arrow-next');
-    if (scrollBtn) {
-        scrollBtn.addEventListener('click', () => {
+    // 1. Efecto de "Zoom" y Sombra en las Portadas
+    const libros = document.querySelectorAll('.book-item');
+    
+    libros.forEach(libro => {
+        libro.addEventListener('mouseenter', () => {
+            libro.style.transform = 'scale(1.05)';
+            libro.style.transition = 'all 0.3s ease';
+            libro.style.cursor = 'pointer';
+        });
+        
+        libro.addEventListener('mouseleave', () => {
+            libro.style.transform = 'scale(1)';
+        });
+
+        // 2. Simular apertura de libro al hacer clic
+        libro.addEventListener('click', () => {
+            const titulo = libro.querySelector('img').alt;
+            alert(`¡Abriendo: ${titulo}! Prepárate para leer.`);
+        });
+    });
+
+    // 3. Botón de Cambio de Tema (Modo Espacial)
+    // Asegúrate de tener un botón con la clase .switch-theme-button en tu HTML
+    const themeBtn = document.querySelector('.switch-theme-button');
+    const header = document.querySelector('.header');
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            header.style.backgroundImage = "url('Textures/background.png')";
+            header.style.backgroundSize = 'cover';
+            document.body.style.backgroundColor = '#1a1a1a';
+            alert('Modo Nocturno activado en Fandom-Squad');
+        });
+    }
+
+    // 4. Función para la flecha de scroll (Si tienes el botón .arrow-next)
+    const arrow = document.querySelector('.arrow-next');
+    if (arrow) {
+        arrow.addEventListener('click', () => {
             window.scrollTo({
                 top: window.innerHeight,
                 behavior: 'smooth'
@@ -11,38 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Función para cambiar el tema (Switch Theme)
-    const switchThemeBtn = document.querySelector('.switch-theme-button');
-    const header = document.querySelector('.header');
-
-    if (switchThemeBtn && header) {
-        switchThemeBtn.addEventListener('click', () => {
-            // Cambiamos el fondo del header por una imagen de espacio
-            header.style.backgroundImage = "url('https://uploads.disquscdn.com/images/bg_space.png')";
-            header.style.backgroundSize = 'cover';
-            header.style.backgroundPosition = 'center';
-            
-            // Opcional: Cambiar color de texto para que sea legible
-            header.style.color = 'white';
-            console.log("Tema espacial activado en Fandom-Squad");
-        });
-    }
-
-    // 3. Optimizador de alturas (Solo si realmente necesitas igualar cajas específicas)
-    // Nota: Con el CSS de Flexbox que te pasé antes, esto ya no suele ser necesario.
-    const adjustHeights = () => {
-        const items = document.querySelectorAll('.book-item');
-        if (items.length > 0) {
-            let maxHeight = 0;
-            items.forEach(item => {
-                item.style.height = 'auto'; // Reset
-                if (item.offsetHeight > maxHeight) maxHeight = item.offsetHeight;
-            });
-            items.forEach(item => item.style.height = maxHeight + 'px');
-        }
-    };
-
-    // Ejecutar al cargar y al cambiar el tamaño de la ventana
-    window.addEventListener('resize', adjustHeights);
-    adjustHeights();
+    console.log("JavaScript de Fandom-Squad cargado correctamente.");
 });
