@@ -1,4 +1,3 @@
-/* 1. Ajustes Globales */
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +6,12 @@
 
 body {
     font-family: 'Lucida Sans', sans-serif;
-    background-color: #f0f0f0; /* Un color base para el fondo */
+    background-color: #f0f0f0;
 }
 
-/* 2. Header */
 .header {
     background-color: #8B008B;
-    width: 100%; /* Cambiado de px a % para que sea responsivo */
+    width: 100%;
     height: 81px;
     display: flex;
     justify-content: center;
@@ -29,13 +27,11 @@ body {
     font-size: 30px;
 }
 
-/* 3. Contenedor Principal (Layout de dos columnas) */
 .main-container {
     display: flex;
     min-height: calc(100vh - 81px);
 }
 
-/* 4. Barra Lateral (Aside) */
 .starlight {
     background-image: url("Textures/background.png");
     background-size: cover;
@@ -70,9 +66,8 @@ body {
     color: #8B008B;
 }
 
-/* 5. Área de Recomendaciones (Main) */
 .side-menu {
-    flex: 1; /* Ocupa el resto del espacio */
+    flex: 1;
     background-color: #720041;
     padding: 40px;
 }
@@ -88,11 +83,10 @@ body {
     margin-bottom: 30px;
 }
 
-/* 6. Cuadrícula de Libros (El gran cambio) */
 .gallery-grid {
     display: flex;
-    flex-wrap: wrap; /* Permite que los libros bajen a la siguiente fila */
-    gap: 20px; /* Espacio entre cada libro */
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
 }
 
