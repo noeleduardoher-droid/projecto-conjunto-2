@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Poppins:wght@300;400;600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Menu - Fandom Squad</title>
 </head>
@@ -115,17 +118,21 @@
                     <div class="stats-row"><span>👁️ 1.2k</span> <span>⭐ 4.5</span></div>
                 </div>
             </div>
-            <nav class="tabs-nav">
-                <button class="tab-link active" data-tab="tab-resumen">Resumen</button>
-                <button class="tab-link" data-tab="tab-partes">Partes</button>
+            
+            <nav class="tabs-nav tabs-container">
+                <button class="tab-btn active" data-target="tab-resumen">Resumen</button>
+                <button class="tab-btn" data-target="tab-partes">Partes</button>
+                <div class="tab-indicator"></div>
             </nav>
-            <div class="tabs-container">
+
+            <div class="tabs-content-wrapper">
                 <div id="tab-resumen" class="tab-content active">
                     <p id="panel-description">Aquí aparecerá la sinopsis completa...</p>
                     <button class="read-now-btn">Empezar a leer</button>
                 </div>
                 <div id="tab-partes" class="tab-content">
-                    <ul class="chapters-list" id="chapters-list-container"></ul>
+                    <ul class="chapters-list" id="chapters-list-container">
+                        </ul>
                 </div>
             </div>
         </div>
