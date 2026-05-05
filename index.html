@@ -9,9 +9,9 @@
 <body>
 
     <header class="header">
-    <h1 class="pagename">Welcome to Fandom-Squad</h1>
-    <button id="boton-oscuro" class="dark-mode-btn">🌙 Modo Oscuro</button>
-</header>
+        <h1 class="pagename">Welcome to Fandom-Squad</h1>
+        <button id="boton-oscuro" class="dark-mode-btn">🌙 Modo Oscuro</button>
+    </header>
 
     <div class="main-container">
         <aside class="starlight">
@@ -23,55 +23,150 @@
             <div class="plants-reference">
                 <img src="Textures/Plants.png" alt="Plants Reference" width="422" height="260">
             </div>
-            <p class="question">¿Te gusta dibujo y personajes originales?</p>
-            <a href="#" class="visit-link">Visita Starlight!</a>
+            <p class="question">¿Te gusta el arte y personajes originales?</p>
+            <a href="#" class="visit-link">¡Visita Starlight!</a>
         </aside>
 
         <main class="side-menu">
             <h2 class="recomendation">Recomendaciones</h2>
             
-            <div class="gallery-grid">
-                
-                <section class="book-item la-daga">
-                    <img src="https://blogliterario.com/wp-content/uploads/2025/03/la-daga-sin-nombre-400.jpg" alt="La Daga Sin Nombre" width="200" height="318">
-                </section>
+            <div class="gallery-grid" id="main-gallery">
+                <section class="book-item" data-title="La Daga Sin Nombre" data-type="text"><img src="https://blogliterario.com/wp-content/uploads/2025/03/la-daga-sin-nombre-400.jpg" alt="Portada"></section>
+                <section class="book-item" data-title="Los Hombres del Norte" data-type="text"><img src="https://i.pinimg.com/1200x/c8/0c/da/c80cdadcd751796c69d7a892005b63fb.jpg" alt="Portada"></section>
+                <section class="book-item" data-title="DC Kingdom Come" data-type="pdf"><img src="https://m.media-amazon.com/images/I/9154OWx3vkL._SL1500_.jpg" alt="Portada"></section>
+                <section class="book-item" data-title="The Legend of Korra" data-type="pdf"><img src="https://m.media-amazon.com/images/I/91uR6966SXL._SL1500_.jpg" alt="Portada"></section>
+                <section class="book-item" data-title="Percy Jackson" data-type="text"><img src="https://tecniciencia.com/cdn/shop/files/9788419275738.jpg?height=720&v=1748831213" alt="Portada"></section>
+                <section class="book-item" data-title="Batman White Knight" data-type="pdf"><img src="https://static.dc.com/dc/files/default_images/BMJKWK_01_300-001_HD_5b7f187f0c3930.50204153.jpg?w=640" alt="Portada"></section>
+                <section class="book-item" data-title="Avatar: La Búsqueda" data-type="pdf"><img src="https://i.pinimg.com/1200x/fc/3f/9c/fc3f9c0dcfe658b19f1b6bd95fed8cc0.jpg" alt="Portada"></section>
+                <section class="book-item" data-title="Hellboy" data-type="pdf"><img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1470965932i/31429948.jpg" alt="Portada"></section>
+                <section class="book-item" data-title="Godzilla" data-type="pdf"><img src="https://m.media-amazon.com/images/I/61kgNs24YkL._SL1200_.jpg" alt="Portada"></section>
+            </div>
 
-                <section class="book-item norte">
-                    <img src="https://i.pinimg.com/1200x/c8/0c/da/c80cdadcd751796c69d7a892005b63fb.jpg" alt="Los Hombres del Norte" width="200" height="318">
-                </section>
+            <div class="action-buttons">
+                <button class="action-btn"><span class="icon">⋮≡</span> MÁS</button>
+                <button id="open-create-modal" class="action-btn"><span class="icon">+</span> CREAR</button>
+            </div>
+        </main>
+    </div>
 
-                <section class="book-item verano">
-                    <img src="https://img.wattpad.com/cover/255641533-256-k350011.jpg" alt="Hasta que el Verano se Acabe" width="200" height="318">
-                </section>
+    <div class="second-page">
+        <p class="Starlight-text">Starlight</p>
+        <p class="Among">Among the Past</p>
 
-                <section class="book-item jackson">
-                    <img src="https://tecniciencia.com/cdn/shop/files/9788419275738.jpg?height=720&v=1748831213" alt="Percy Jackson" width="200" height="318">
-                </section>
+        <div class="introduction-to-page">
+            <p class="text1">Meet the Gang and the world around them, Face the Past and the bad apple's of the person you were before,can you beat and move on, or remain stuck in what where “happier” times..</p>
+            <p class="text2">That's, only something YOU can resolve ***.</p>
+            <p class="text3">See you soon...</p>
+        </div>
+            
+        <main class="Interactive-layout">
+            <p class="characters">characters</p>
+            <div class="plants-little-icon">
+                <img src="Textures/Plants(pagewip).png" width="384" height="384">
+            </div>
+            <p class="History">History</p>
+        </main>
 
-                <section class="book-item assassins">
-                    <img src="https://tecniciencia.com/cdn/shop/files/9788445006566_01bfef16-aa4c-4568-8a1a-a7d79818052a.jpg?v=1747622076" alt="Assassin's Creed: Brotherhood" width="200" height="318">
-                </section>
+        <footer class="support">
+            <p class="need-help">Wanna ask me something? feel free to message me!</p>
+            <div class="gmail">
+                <img src="Textures/gmail-logo.png" width="70" height="70">
+            </div>
+        </footer>
+    </div>
 
-                <section class="book-item dc">
-                    <img src="https://m.media-amazon.com/images/I/9154OWx3vkL._SL1500_.jpg" alt="DC Kingdom Come" width="200" height="318">
-                </section>
+    <div id="create-fandom-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h3>¿Que Fandom quieres crear?</h3>
+                <button id="close-modal">✕</button>
+            </header>
+            <div class="modal-body">
+                <div class="poster-upload">
+                    <div class="poster-placeholder"><span>Añadir Poster</span></div>
+                </div>
+                <div class="fandom-form">
+                    <label>Nombre:</label>
+                    <input type="text" id="fandom-name" placeholder="Nombre de Fandom">
+                    <label>Descripción:</label>
+                    <textarea id="fandom-desc" placeholder="Descripcion de Fandom"></textarea>
+                    <label>Categoría:</label>
+                    <select id="fandom-category">
+                        <option value="">Escoge una categoria</option>
+                        <option value="anime">Anime</option>
+                        <option value="comics">Comics</option>
+                    </select>
+                    <button id="btn-final-create" class="create-confirm-btn">CREAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <section class="book-item batman">
-                    <img src="https://static.dc.com/dc/files/default_images/BMJKWK_01_300-001_HD_5b7f187f0c3930.50204153.jpg?w=640" alt="Batman White Knight" width="200" height="318">
-                </section>
+    <div id="info-panel" class="info-side-panel">
+        <div class="panel-header">
+            <button class="close-panel-btn">&larr; Volver</button>
+        </div>
+        <div class="panel-body">
+            <div class="panel-main-info">
+                <img id="panel-img" src="" alt="Portada Seleccionada">
+                <div class="text-content">
+                    <h2 id="panel-title">Título</h2>
+                    <p class="author-label">Autor de la obra</p>
+                    <div class="stats-row"><span>👁️ 1.2k</span> <span>⭐ 4.5</span></div>
+                </div>
+            </div>
+            <nav class="tabs-nav">
+                <button class="tab-link active" data-tab="tab-resumen">Resumen</button>
+                <button class="tab-link" data-tab="tab-partes">Partes</button>
+            </nav>
+            <div class="tabs-container">
+                <div id="tab-resumen" class="tab-content active">
+                    <p id="panel-description">Aquí aparecerá la sinopsis completa...</p>
+                    <button class="read-now-btn">Empezar a leer</button>
+                </div>
+                <div id="tab-partes" class="tab-content">
+                    <ul class="chapters-list" id="chapters-list-container"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <section class="book-item avatar">
-                    <img src="https://i.pinimg.com/1200x/fc/3f/9c/fc3f9c0dcfe658b19f1b6bd95fed8cc0.jpg" alt="Avatar: La Busqueda" width="200" height="318">
-                </section>
+    <div id="chat-app-view" class="chat-interface" style="display: none;">
+        <aside class="chat-sidebar">
+            <header class="sidebar-header"><button id="exit-chat">← Volver</button></header>
+            <div class="chat-search"><input type="text" placeholder="Buscar fandom..."></div>
+            <ul class="chat-list" id="registered-fandoms-list"></ul>
+        </aside>
+        <section class="chat-window">
+            <header class="chat-window-header"><h4 id="current-chat-name">Selecciona un Fandom</h4></header>
+            <div class="chat-messages-area" id="messages-container"></div>
+            <footer class="chat-input-area">
+                <input type="text" id="message-input" placeholder="Escribe un mensaje...">
+                <button id="send-msg-btn">➤</button>
+            </footer>
+        </section>
+    </div>
 
-                <section class="book-item hellboy">
-                    <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1470965932i/31429948.jpg" alt="Hellboy: Into The Silent Sea" width="200" height="318">
-                </section>
+    <div id="reader-view" class="reader-container" style="display: none;">
+        <header class="reader-header">
+            <button id="close-reader" class="back-btn">✕ Cerrar</button>
+            <div id="text-tools" class="reader-settings">
+                <button class="bg-tool white"></button>
+                <button class="bg-tool sepia"></button>
+                <button class="bg-tool dark"></button>
+            </div>
+        </header>
+        <div id="reader-wrapper">
+            <article id="reader-content" class="reader-text">
+                <h1 id="reader-chapter-title"></h1>
+                <div id="chapter-text"></div>
+            </article>
+            <div id="pdf-container" class="pdf-viewer" style="display: none;">
+                <iframe id="pdf-frame" src="" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </div>
 
-                <section class="book-item godzilla">
-                    <img src="https://m.media-amazon.com/images/I/61kgNs24YkL._SL1200_.jpg" alt="Godzilla" width="200" height="318">
-                </section>
-
-            </div> </main>
-    </div> </body>
+    <script src="script.js"></script>
+</body>
 </html>
