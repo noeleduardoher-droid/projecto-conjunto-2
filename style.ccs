@@ -12,17 +12,6 @@ body.dark-mode {
     --text-color: #ffffff;
 }
 
-.dark-mode-btn {
-    position: absolute;
-    right: 20px;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 20px;
-    border: none;
-    background: white;
-    font-weight: bold;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -32,10 +21,11 @@ body.dark-mode {
 body {
     font-family: 'Lucida Sans', sans-serif;
     background-color: #f0f0f0;
+    overflow-x: hidden;
 }
 
 .header {
-    background-color: #8B008B;
+    background-color: var(--bg-header);
     width: 100%;
     height: 81px;
     display: flex;
@@ -43,6 +33,7 @@ body {
     align-items: center;
     color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
 }
 
 .pagename {
@@ -50,6 +41,18 @@ body {
     font-weight: 700;
     font-style: italic;
     font-size: 30px;
+}
+
+.dark-mode-btn {
+    position: absolute;
+    right: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: bold;
 }
 
 .main-container {
@@ -70,29 +73,6 @@ body {
     align-items: center;
 }
 
-.novedad {
-    font-size: 40px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.starlight-logo img {
-    max-width: 100%;
-    height: auto;
-}
-
-.starlight-logo-text {
-    font-size: 25px;
-    font-weight: 200;
-    text-align: center;
-    margin: 10px 0;
-}
-
-.starlight-logo-text:hover {
-    cursor: pointer;
-    color: #8B008B;
-}
-
 .side-menu {
     flex: 1;
     background-color: var(--bg-main);
@@ -100,28 +80,11 @@ body {
     transition: background-color 0.4s ease;
 }
 
-.recomendation {
-    background-color: #DA8585;
-    font-size: 30px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: 5px solid black;
-    border-radius: 10px;
-    display: inline-block;
-    margin-bottom: 30px;
-}
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 25px;
     justify-items: center;
-    padding: 20px;
-
-}
-
-.book-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .book-item img {
@@ -135,6 +98,210 @@ body {
 
 .book-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     cursor: pointer;
+}
+
+.info-side-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: var(--bg-aside);
+    color: var(--text-color);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 3000;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #8B008B;
+}
+
+.info-side-panel.active {
+    right: 0;
+}
+
+.close-panel-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 45px;
+    color: var(--text-color);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.panel-body {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#panel-img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    margin-bottom: 25px;
+}
+
+#panel-title {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.read-now-btn {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #8B008B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+}
+
+.la-daga{
+    height: 315px;
+    width: 215px;
+}
+.norte{
+    height: 315px;
+    width: 215px;
+}
+.verano{
+    height: 315px;
+    width: 205px;
+}
+.jackson{
+    height: 315px;
+    width: 201px;   
+}
+.assassins{
+    height: 310px;
+}
+.batman {
+    height: 315px;
+    width: 205px;
+}
+.avatar {
+    height: 315px;
+}
+.hellboy {
+    height: 315px;
+}
+.godzilla{
+    height: 315px;
+    width: 195px;
+}
+
+.second-page {
+    display: none;
+}
+
+.Starlight-text{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 700;
+    position: absolute;
+    right: 825px;
+    top: 5px;
+}
+
+.Among{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 700;
+    position: absolute;
+    right: 777px;
+    top: 50px;
+}
+
+.introduction-to-page {
+    background-color: #183459;
+    border-radius: 50px;
+    position: absolute;
+    margin: 40px;
+    top: 120px;
+    left: 480px;
+    width: 800px;
+}
+
+.text1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 15px;
+    margin: 5px;
+}
+.text2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 25px;
+    position: relative;
+    text-align: center;
+    left: 20px;
+}
+.text3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+    left: 20px;
+}
+.Interactive-layout {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 675px;
+    top: 350px;
+}
+
+.characters {
+    font-size: 70px;
+    position: absolute;
+    right: -25px;
+    top: 50px;
+    padding: 50px;
+    border-radius: 50px;
+    background-color: #42A468;
+}
+.History {
+    font-size: 70px;
+    position: absolute;
+    left: 530px;
+    top: 50px;
+    padding: 50px;
+    border-radius: 50px;
+    background-color: #42A468;
+}
+.plants-little-icon {
+    position: absolute;
+    left: 85px;
+    top: -30px;
+}
+.support {
+    position: relative;
+    bottom: -750px;
+    left: 600px;
+    width: 710px;
+}
+
+.need-help {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    background-color: #183459;
+    border-radius: 50px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.gmail {
+    position: relative;
+    left: 320px;
+    top: 30px;
 }
