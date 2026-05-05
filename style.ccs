@@ -8,28 +8,14 @@
     --bg-modal: #ffffff;
     --bg-chat-sidebar: #f0f2f5;
     --bg-chat-window: #e5ddd5;
-    --chat-bubble-me: #dcf8c6;
-    --chat-bubble-other: #ffffff;  
-    --text-primary: #000000;
-    --text-secondary: #54656f;
-    --text-white: #ffffff;    
     --font-logo: 'Jaro', sans-serif;
     --font-ui: 'Poppins', sans-serif;
     --font-story: 'Lora', serif;
     --font-mono: 'Courier New', Courier, monospace;
-    --border-radius-sm: 8px;
-    --shadow-soft: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-body.dark-mode {
-    --bg-header: #1a1a1a;
-    --bg-main: #2b2b2b;
-    --bg-aside: #333333;
-    --bg-modal: #1e1e1e;
-    --bg-chat-sidebar: #2a2f32;
-    --bg-chat-window: #0d1418;
-    --text-primary: #ffffff;
-    --text-secondary: #b1b3b5;
+    --radius-main: 15px;
+    --radius-book: 8px;
+    --shadow-medium: 0 8px 25px rgba(0,0,0,0.3);
+    --shadow-strong: 0 12px 40px rgba(0,0,0,0.5);
 }
 
 * {
@@ -41,10 +27,19 @@ body.dark-mode {
 body {
     font-family: var(--font-ui);
     background-color: var(--bg-aside);
-    color: var(--text-primary);
+    color: #000;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.4s ease;
+}
+
+body.dark-mode {
+    --bg-header: #1a1a1a;
+    --bg-main: #2b2b2b;
+    --bg-aside: #333333;
+    --bg-modal: #1e1e1e;
+    --bg-chat-sidebar: #2a2f32;
+    --bg-chat-window: #0d1418;
+    color: #ffffff;
 }
 
 .header {
@@ -54,7 +49,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-white);
+    color: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     position: sticky;
     top: 0;
@@ -63,22 +58,20 @@ body {
 
 .pagename {
     font-family: var(--font-logo);
-    font-weight: 700;
-    font-style: italic;
     font-size: 34px;
+    font-style: italic;
     letter-spacing: 1px;
 }
 
 .dark-mode-btn {
     position: absolute;
     right: 25px;
-    font-family: var(--font-ui);
     padding: 10px 18px;
     cursor: pointer;
     border-radius: 20px;
     border: none;
-    background: var(--text-white);
     font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.2s;
 }
 
@@ -110,56 +103,68 @@ body {
     gap: 30px;
 }
 
+.book-item {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 .book-item img {
     width: 100%;
     height: 315px;
-    border-radius: var(--border-radius-sm);
+    border-radius: var(--radius-book);
     object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: var(--shadow-medium);
+    transition: all 0.4s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-12px) scale(1.03);
+    z-index: 5;
+}
+
+.book-item:hover img {
+    box-shadow: var(--shadow-strong);
+    filter: brightness(1.1);
 }
 
 .second-page {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 60px 20px;
+    padding: 80px 20px;
     display: none;
     flex-direction: column;
     align-items: center;
 }
 
-.Starlight-text, .Among {
-    font-family: var(--font-mono);
-    font-size: 45px;
-    font-weight: bold;
-    text-align: center;
-}
-
 .introduction-to-page {
     background-color: #183459;
     color: white;
-    border-radius: 35px;
-    max-width: 850px;
+    border-radius: var(--radius-main);
+    max-width: 900px;
     padding: 40px;
     margin: 40px auto;
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--shadow-medium);
 }
 
 .text1, .text2, .text3 {
     font-family: var(--font-story);
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     line-height: 1.6;
-    margin-bottom: 15px;
 }
 
 .characters, .History {
     font-family: var(--font-ui);
-    font-weight: 600;
-    padding: 25px 50px;
+    padding: 25px 55px;
     border-radius: 50px;
     background-color: #42A468;
     color: white;
-    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+.characters:hover, .History:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(66, 164, 104, 0.4);
 }
 
 .action-buttons {
@@ -169,6 +174,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    z-index: 2000;
 }
 
 .action-btn {
@@ -178,7 +184,12 @@ body {
     height: 65px;
     border-radius: 50%;
     border: none;
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
 }
