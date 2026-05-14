@@ -109,7 +109,6 @@ const pdfViewer = document.getElementById('pdf-viewer');
 let currentComicId = "";
 let currentCapIndex = 0;
 
-// Apertura de Panel
 document.querySelectorAll('.book-item').forEach(item => {
     item.addEventListener('click', (e) => {
         if(e.target.classList.contains('fav-btn')) return;
@@ -138,7 +137,6 @@ document.querySelectorAll('.book-item').forEach(item => {
     });
 });
 
-// Función Lector
 function abrirLector(id, index) {
     const comic = bdComics[id];
     currentComicId = id;
@@ -148,12 +146,10 @@ function abrirLector(id, index) {
     pdfViewer.src = comic.links[index];
     reader.classList.remove('hidden');
 
-    // Opacidad de botones si no hay más capítulos
     document.getElementById('prev-cap').style.opacity = index === 0 ? "0.4" : "1";
     document.getElementById('next-cap').style.opacity = index === comic.links.length - 1 ? "0.4" : "1";
 }
 
-// Navegación Lector
 document.getElementById('next-cap').onclick = () => {
     const comic = bdComics[currentComicId];
     if (currentCapIndex < comic.links.length - 1) {
@@ -169,7 +165,6 @@ document.getElementById('prev-cap').onclick = () => {
 
 document.getElementById('start-reading-btn').onclick = () => abrirLector(currentComicId, 0);
 
-// Pestañas del Panel
 document.querySelectorAll('.tab-link').forEach(tab => {
     tab.onclick = () => {
         document.querySelectorAll('.tab-link, .tab-content').forEach(el => el.classList.remove('active'));
@@ -178,7 +173,6 @@ document.querySelectorAll('.tab-link').forEach(tab => {
     };
 });
 
-// Favoritos (Alternar Icono)
 document.querySelectorAll('.fav-btn').forEach(btn => {
     btn.onclick = (e) => {
         e.stopPropagation();
@@ -186,7 +180,6 @@ document.querySelectorAll('.fav-btn').forEach(btn => {
     };
 });
 
-// Cerrar Elementos
 document.getElementById('close-reader').onclick = () => {
     reader.classList.add('hidden');
     pdfViewer.src = "";
