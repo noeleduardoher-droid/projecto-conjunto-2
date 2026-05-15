@@ -103,10 +103,10 @@
         <div class="tabs-container">
             <div id="tab-resumen" class="tab-content active">
                 <p id="panel-description">Sinopsis...</p>
-                <button id="start-reading-btn" class="custom-btn" style="width: 100%; margin-top: 20px; padding: 15px;">Leer ahora</button>
             </div>
             <div id="tab-partes" class="tab-content">
                 <ul class="chapters-list"></ul>
+                <button id="start-reading-btn" class="custom-btn" style="width: 100%; margin-top: 20px; padding: 15px;">Leer ahora</button>
             </div>
         </div>
     </div>
