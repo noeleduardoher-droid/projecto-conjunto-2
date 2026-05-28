@@ -1,6 +1,4 @@
-Aquí tienes el código completo del `README.md` listo para copiar y pegar directamente en tu archivo de GitHub.
 
-```markdown
 # 🌿 Plants Website - Project Demo
 
 ¡Bienvenido a **Plants Website**! Este es un proyecto frontend moderno, elegante y completamente responsivo diseñado para una tienda en línea y plataforma de aprendizaje sobre plantas. El sitio web destaca por un diseño visualmente atractivo ("lush and green"), animaciones fluidas al hacer scroll y elementos interactivos avanzados para mejorar la experiencia del usuario.
@@ -45,32 +43,17 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 ### Pasos para la Inicialización
 
 1. **Clonar el repositorio:**
-```bash
    git clone [https://github.com/ThePlantsBoy/Project-Demo.git](https://github.com/ThePlantsBoy/Project-Demo.git)
 
-```
-
 2. **Navegar al directorio del proyecto:**
-
-```bash
    cd Project-Demo
 
-```
-
 3. **Instalar las dependencias (si aplica):**
-
-```bash
    npm install
-
-```
 
 4. **Ejecutar Tailwind CSS en modo escucha (Watch Mode):**
 Para compilar los estilos automáticamente en tiempo real mientras realizas cambios:
-
-```bash
    npm run watch
-
-```
 
 5. **Desplegar el Servidor Local:**
 Abre el archivo `index.html` utilizando la extensión **Live Server** en VS Code o abriendo directamente el archivo en tu navegador.
@@ -80,8 +63,6 @@ Abre el archivo `index.html` utilizando la extensión **Live Server** en VS Code
 ## 📁 Estructura del Proyecto
 
 A continuación se detalla la organización principal de los archivos:
-
-```text
 Project-Demo/
 │
 ├── src/
@@ -97,8 +78,6 @@ Project-Demo/
 ├── tailwind.config.js       # Configuración y personalización de Tailwind CSS
 ├── package.json             # Scripts de npm y gestión de dependencias
 └── README.md                # Documentación del proyecto
-
-```
 
 ---
 
